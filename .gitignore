@@ -1,0 +1,6 @@
+
+*.hcl
+*.tfstate
+.terraform.lock.hcl
+.terraform/
+*.hidden
