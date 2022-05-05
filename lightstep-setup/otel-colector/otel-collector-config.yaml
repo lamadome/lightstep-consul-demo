@@ -54,7 +54,7 @@ data:
         otlp:
           endpoint: "ingest.lightstep.com:443"
           headers:
-            "lightstep-access-token": "0X18K81Oxyy7tEOIXarMYihU5hQZnm4o6LvROVPQ1keGswCKIao8TgAaFt6EbFpdCrnBe4FOaU7ZpCTlQMpu7c4JXr7ig8Myrfhp94+R"
+            "lightstep-access-token": '${LIGHTSTEP_ACCESS_TOKEN}'
         # awsxray:
         #   region: us-west-2
     processors:
@@ -70,4 +70,3 @@ data:
           metrics:
             receivers: [otlp,hostmetrics,prometheus]
             exporters: [logging, otlp]
-            
