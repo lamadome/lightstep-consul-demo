@@ -24,7 +24,7 @@ data:
           price
         }
       }`;
-      var url = 'http://consul-ingress-gateway:8080/api';
+      var url = 'http://${ingress-gw-name}:8080/api';
       var payload = JSON.stringify({
         query: query
       });
