@@ -1,5 +1,5 @@
 variable "vpc_region" {
-  description = "lightstep_project"
+  description = "vpc_region"
 }
 variable "hvn_region" {
   description = "hvn_region"

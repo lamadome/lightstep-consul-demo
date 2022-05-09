@@ -12,6 +12,9 @@ terraform {
 }
 data "kubectl_path_documents" "manifests" {
   pattern = "${path.module}/services/*.yaml"
+  vars = {
+        ingress-gw-name = var.ingress-gw-name
+    }
 }
 
 # data "kubectl_path_documents" "lightstep" {
