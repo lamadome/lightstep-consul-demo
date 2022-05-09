@@ -13,6 +13,9 @@ terraform {
 
 data "kubectl_path_documents" "lightstep" {
   pattern = "${path.module}/otel-colector/*.yaml"
+  vars = {
+        LIGHTSTEP_ACCESS_TOKEN = var.LIGHTSTEP_ACCESS_TOKEN
+    }
 }
 
 resource "kubectl_manifest" "lightstep" {

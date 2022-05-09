@@ -7,3 +7,6 @@ variable "lightstep_api_key" {
 variable "lightstep_org" {
   description = "lightstep_org"
 }
+variable "LIGHTSTEP_ACCESS_TOKEN" {
+  description = "LIGHTSTEP_ACCESS_TOKEN"
+}
