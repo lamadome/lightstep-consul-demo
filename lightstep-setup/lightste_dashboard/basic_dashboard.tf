@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "lightstep" {
-  api_key         = var.lightstep_api_ley
+  api_key         = var.lightstep_api_key
   organization    = var.lightstep_org
 }
 

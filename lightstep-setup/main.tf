@@ -27,6 +27,6 @@ resource "kubectl_manifest" "lightstep" {
 module "lightstep_metric_dashboard" {
   source            = "./lightste_dashboard"
   project = var.lightstep_project
-  lightstep_api_ley = var.lightstep_api_ley
+  lightstep_api_key = var.lightstep_api_key
   lightstep_org = var.lightstep_org
 }
