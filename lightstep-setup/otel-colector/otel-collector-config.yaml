@@ -46,6 +46,8 @@ data:
               - source_labels: [__address__]
                 regex: "(request_duration_seconds.*|response_duration_seconds.*)"
                 action: keep
+    processors:
+        batch:
     exporters:
         logging:
             loglevel: debug
@@ -57,9 +59,6 @@ data:
             "lightstep-access-token": '${LIGHTSTEP_ACCESS_TOKEN}'
         # awsxray:
         #   region: us-west-2
-    processors:
-        batch:
-
     service:
         extensions: [health_check]
         pipelines:
