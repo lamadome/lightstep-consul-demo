@@ -14,6 +14,7 @@ data "kubectl_path_documents" "manifests" {
   pattern = "${path.module}/services/*.yaml"
   vars = {
         ingress-gw-name = var.ingress-gw-name
+        ingress-gw-port = var.ingress-gw-port
     }
 }
 
@@ -30,10 +31,10 @@ resource "kubectl_manifest" "applications" {
   yaml_body = element(data.kubectl_path_documents.manifests.documents, count.index)
 }
 
-data "kubernetes_service" "ingress" {
-  metadata {
-    name = "consul-ingress-gateway"
-  }
+# data "kubernetes_service" "ingress" {
+#   metadata {
+#     name = "consul-ingress-gateway"
+#   }
 
-  depends_on = [kubectl_manifest.applications]
-}
+#   depends_on = [kubectl_manifest.applications]
+# }

@@ -24,7 +24,7 @@ data:
           price
         }
       }`;
-      var url = 'http://${ingress-gw-name}:8080/api';
+      var url = 'http://${ingress-gw-name}:${ingress-gw-port}/api';
       var payload = JSON.stringify({
         query: query
       });
@@ -73,7 +73,7 @@ data:
           message
         }
       }`;
-      var url = 'http://${ingress-gw-name}:8080/api';
+      var url = 'http://${ingress-gw-name}:${ingress-gw-port}/api';
       var payload = JSON.stringify({
         query: query
       });
