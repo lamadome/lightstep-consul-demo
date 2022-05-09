@@ -32,4 +32,5 @@ module "lightstep_metric_dashboard" {
   project = var.lightstep_project
   lightstep_api_key = var.lightstep_api_key
   lightstep_org = var.lightstep_org
+  LIGHTSTEP_ACCESS_TOKEN = var.LIGHTSTEP_ACCESS_TOKEN
 }
