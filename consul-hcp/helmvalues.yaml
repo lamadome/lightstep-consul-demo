@@ -7,11 +7,11 @@ client:
 connectInject:
   default: true
   enabled: true
+  transparentProxy:
+    defaultEnabled: true
   metrics:
     defaultEnabled: true # by default, this inherits from the value global.metrics.enabled
     defaultEnableMerging: true
-  transparentProxy:
-    defaultEnabled: true
 controller:
   enabled: true
 externalServers:
@@ -22,17 +22,17 @@ externalServers:
   k8sAuthMethodHost: https://2FCE1B7E88DB550DB7C9F320E9F347BE.gr7.eu-west-3.eks.amazonaws.com
   useSystemRoots: true
 global:
+  metrics:
+    enabled: true
+    enableAgentMetrics: true
+    enableGatewayMetrics: true
+    agentMetricsRetentionTime: "1m"
   acls:
     bootstrapToken:
       secretKey: bootstrapToken
       secretName: consul-quickstart-1651644405175-hcp
     manageSystemACLs: true
   datacenter: consul-quickstart-1651644405175
-  metrics:
-    enabled: true
-    enableAgentMetrics: true
-    enableGatewayMetrics: true
-    agentMetricsRetentionTime: "1m"
   enabled: false
   gossipEncryption:
     secretKey: gossipEncryptionKey

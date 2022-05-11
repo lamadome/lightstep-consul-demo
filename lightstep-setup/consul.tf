@@ -1,7 +1,4 @@
 provider "consul" {
-  address    = "consul-quickstart-1651644405175.consul.18ee0ccc-0295-4e79-b048-c0068fe009cc.aws.hashicorp.cloud"
-  insecure_https = true
-  scheme = "https"
 }
 resource "consul_acl_policy" "anonymous_metrics_read" {
   name        = "anonymous_metrics_read"

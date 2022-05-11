@@ -1,3 +1,4 @@
-lightstep_project = ""
-lightstep_api_key = ""
 lightstep_org = ""
+lightstep_project = ""
+LIGHTSTEP_ACCESS_TOKEN= ""
+lightstep_api_key = ""
