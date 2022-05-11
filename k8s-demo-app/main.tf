@@ -31,10 +31,10 @@ resource "kubectl_manifest" "applications" {
   yaml_body = element(data.kubectl_path_documents.manifests.documents, count.index)
 }
 
-data "kubernetes_service" "ingress" {
-  metadata {
-    name = var.ingress-gw-name
-  }
+# data "kubernetes_service" "ingress" {
+#   metadata {
+#     name = var.ingress-gw-name
+#   }
 
-  depends_on = [kubectl_manifest.applications]
-}
+#   depends_on = [kubectl_manifest.applications]
+# }
