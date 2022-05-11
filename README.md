@@ -52,7 +52,7 @@ kubeconfig_filename = "<path to kubeconfig file>"
 
 ## Install Opentelemetry and configure Lighstep
 The following few commands are used to enable metrics on the k8s consul client deployed as part of the terraform code
-1) Run the following  ``èxport KUBECONFIG="<path to kubeconfig file>"````
+1) Run the following  ``export KUBECONFIG="<path to kubeconfig file>"``
 2) Run ```helm get values consul > helmvalus.yaml```  This will save the used helm values to a file. 
 3) Now add the metricss stanza the following stanzas:
     a) Under the global :
