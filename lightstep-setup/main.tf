@@ -28,7 +28,7 @@ resource "kubectl_manifest" "lightstep" {
 }
 # Example: Create basic dashboard
 module "lightstep_metric_dashboard" {
-  source            = "./lightste_dashboard"
+  source            = "./lightstep_dashboard"
   project = var.lightstep_project
   lightstep_api_key = var.lightstep_api_key
   lightstep_org = var.lightstep_org
