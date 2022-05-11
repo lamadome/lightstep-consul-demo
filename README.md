@@ -65,16 +65,16 @@ The following few commands are used to enable metrics on the k8s consul client d
             agentMetricsRetentionTime: "1m"
     ```
     b) Under connectInject:
-        ```
-        connectInject:
-            default: true
-            enabled: true
-            transparentProxy:
-                defaultEnabled: true
-            metrics:
-                defaultEnabled: true # by default, this inherits from the value global.metrics.enabled
-                defaultEnableMerging: true
-        ```
+    ```
+    connectInject:
+        default: true
+        enabled: true
+        transparentProxy:
+            defaultEnabled: true
+        metrics:
+            defaultEnabled: true # by default, this inherits from the value global.metrics.enabled
+            defaultEnableMerging: true
+    ```
 4) Run ``helm upgrade consul hashicorp/consul -f "helmvalues.yaml" ``
 
 Now that we have consul enabled for metrics and telemtry, lets configure the lightstep the open telemetry collector and the lighstep dashboards using terraform.
