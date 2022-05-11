@@ -56,14 +56,14 @@ The following few commands are used to enable metrics on the k8s consul client d
 2) Run ```helm get values consul > helmvalus.yaml```  This will save the used helm values to a file. 
 3) Now add the metricss stanza the following stanzas:
     a) Under the global :
-        ```
-        global:
-            metrics:
-                enabled: true
-                enableAgentMetrics: true
-                enableGatewayMetrics: true
-                agentMetricsRetentionTime: "1m"
-        ```
+    ```
+    global:
+        metrics:
+            enabled: true
+            enableAgentMetrics: true
+            enableGatewayMetrics: true
+            agentMetricsRetentionTime: "1m"
+    ```
     b) Under connectInject:
         ```
         connectInject:
