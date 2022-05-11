@@ -1,0 +1,2 @@
+#ingress-gw-name = "consul-eks-prod-ingress-gateway"
+ingress-gw-port = "80"

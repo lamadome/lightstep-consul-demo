@@ -23,7 +23,7 @@ resource "kubectl_manifest" "lightstep" {
   # For some reason using the above line returns a count not known until apply
   # error, even though the files are static. This needs to be kept in sync with
   # the YAML files defined in the services/ directory.
-  count     = 7
+  count     = 8
   yaml_body = element(data.kubectl_path_documents.lightstep.documents, count.index)
 }
 # Example: Create basic dashboard

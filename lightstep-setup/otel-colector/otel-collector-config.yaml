@@ -31,7 +31,7 @@ data:
             - job_name: "otel-collector"
               scrape_interval: 5s
               static_configs:
-                - targets: ["prometheus-server:9090"]
+                - targets: ["0.0.0.0:8888"]
             - job_name: k8s
               kubernetes_sd_configs:
               - role: pod
@@ -51,7 +51,6 @@ data:
     exporters:
         logging:
             loglevel: debug
-
         # configuring otlp to public satellites
         otlp:
           endpoint: "ingest.lightstep.com:443"
@@ -68,4 +67,4 @@ data:
             processors: [batch]
           metrics:
             receivers: [otlp,hostmetrics,prometheus]
-            exporters: [logging, otlp]
+            exporters: [logging,otlp]

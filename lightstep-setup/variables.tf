@@ -10,3 +10,6 @@ variable "lightstep_org" {
 variable "LIGHTSTEP_ACCESS_TOKEN" {
   description = "LIGHTSTEP_ACCESS_TOKEN"
 }
+# variable "consul_url" {
+#   description = "consul url"
+# }

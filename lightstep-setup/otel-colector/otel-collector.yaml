@@ -24,6 +24,13 @@ spec:
     spec:
       serviceAccountName: otelcontribcol
       containers:
+      # - name: frontend
+      #   image: hashicorpdemoapp/frontend:v0.0.7
+      #   ports:
+      #     - containerPort: 80  
+      #   volumeMounts:
+      #   - name: consul-ca
+      #     mountPath: /hcp-consul
       - command:
           - "/otelcol-contrib"
           - "--config=/conf/otel-collector-config.yaml"
@@ -57,7 +64,8 @@ spec:
         volumeMounts:
         - name: otel-collector-config-vol
           mountPath: /conf
-
+        - name: consul-ca
+          mountPath: /hcp-consul
         livenessProbe:
           httpGet:
             path: /
@@ -73,6 +81,9 @@ spec:
             items:
               - key: otel-collector-config
                 path: otel-collector-config.yaml
+        - name: consul-ca
+          secret:
+            secretName: consul-quickstart-1651644405175-hcp
 ---
 apiVersion: v1
 kind: Service
