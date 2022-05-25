@@ -1,0 +1,61 @@
+USER-SUPPLIED VALUES:
+client:
+  enabled: true
+  join:
+  - consul-nothing.private.consul.18ee0ccc-0295-4e79-b048-c0068fe009cc.aws.hashicorp.cloud
+  nodeMeta:
+    terraform-module: hcp-eks-client
+connectInject:
+  default: true
+  enabled: true
+  transparentProxy:
+    defaultEnabled: true
+  metrics:
+    defaultEnabled: true # by default, this inherits from the value global.metrics.enabled
+    defaultEnableMerging: true
+controller:
+  enabled: true
+externalServers:
+  enabled: true
+  hosts:
+  - nothing
+  httpsPort: 443
+  k8sAuthMethodHost: https://nothing
+  useSystemRoots: true
+global:
+  metrics:
+    enabled: true
+    enableAgentMetrics: true
+    enableGatewayMetrics: true
+    agentMetricsRetentionTime: "1m"
+  acls:
+    bootstrapToken:
+      secretKey: bootstrapToken
+      secretName: consul-nothing-hcp
+    manageSystemACLs: true
+  datacenter: consul-nothing
+  enabled: false
+  gossipEncryption:
+    secretKey: gossipEncryptionKey
+    secretName: consul-nothing-hcp
+  image: hashicorp/consul-enterprise:1.12.0-ent
+  name: consul
+  tls:
+    caCert:
+      secretKey: caCert
+      secretName: consul-nothing-hcp
+    enableAutoEncrypt: true
+    enabled: true
+    httpsOnly: false
+ingressGateways:
+  enabled: true
+  gateways:
+  - name: ingress-gateway
+    service:
+      ports:
+      - port: 80
+      type: LoadBalancer
+server:
+  enabled: false
+prometheus:
+  enabled: true
